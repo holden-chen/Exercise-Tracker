@@ -23,12 +23,10 @@ const exerciseSchema = mongoose.Schema({
     date: { type: String, required: true }  // MM-DD-YY format
 });
 
-// Compile the model from the schema. This must be done after defining the schema.
 const exercise = mongoose.model("Exercise", exerciseSchema);
 
 // ----------------------------------------------------------
 // IMPLEMENT CRUD OPERATIONS IN THE MODEL
-
 
 // CREATE
 
@@ -38,3 +36,4 @@ const exercise = mongoose.model("Exercise", exerciseSchema);
 
 // DELETE
 
+export { exercise, exerciseSchema };

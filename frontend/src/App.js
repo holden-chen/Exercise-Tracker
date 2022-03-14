@@ -1,23 +1,39 @@
-import logo from './logo.svg';
+
+// import styles
 import './App.css';
 
-function App() {
+// import dependencies
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
+// import pages
+import HomePage from './pages/HomePage.js';
+import CreatePage from './pages/CreatePage.js';
+import EditPage from './pages/EditPage.js';
+
+// import components
+import Navigation from './components/Navigation.js'
+
+
+function App() {  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <header className="App-header">
+          <h1>Excercise Tracker</h1>
+          <p>A tool to track exercises</p>
+        </header>
+        <Navigation />
+        <main>
+          <Route path="/" exact><HomePage /></Route>
+          <Route path="/add-exercise"><CreatePage  /></Route>
+          <Route path="/edit-exercise"><EditPage  /></Route>
+        </main>
+        <footer>
+          <p>&copy; 2022 Holden Chen.</p>
+        </footer>
+      </Router>
     </div>
   );
 }
