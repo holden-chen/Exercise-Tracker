@@ -10,9 +10,10 @@ import Table from '../components/Table.js';
 // function returns the table component that includes
 // icon links to Edit and Delete
 
-function HomePage() {
+function HomePage({ setExerciseToEdit }) {
   
   const [exercises, setExercises] = useState([]);
+  const history = useHistory();
 
   // onDelete
   const onDelete = async _id => {
@@ -25,6 +26,11 @@ function HomePage() {
   }
 
   // onEditExercise
+  const onEdit = exercise => {
+    setExerciseToEdit(exercise);
+    history.push('/edit-exercise')
+
+  }
 
   // loadExercises
   const loadExercises = async () => {
@@ -40,7 +46,7 @@ function HomePage() {
   return (
     <>
       <h2>Exercises</h2>
-      <Table exercises={exercises} onDelete={onDelete} />
+      <Table exercises={exercises} onDelete={onDelete} onEdit={onEdit} />
     </>
   );
 }

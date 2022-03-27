@@ -64,11 +64,11 @@ export const CreatePage = () => {
                                 onChange={e => setWeight(e.target.value)} />
                         </td>
                         <td>
-                            <input
-                                type="text"
-                                placeholder="Enter unit here"
-                                value={unit}
-                                onChange={e => setUnit(e.target.value)} />
+                            <input list="unitOptions" value={unit} onChange={e => setUnit(e.target.value)} />
+                                <datalist id="unitOptions">
+                                    <option value="lb.">lb.</option>
+                                    <option value="kg.">kg.</option>
+                                </datalist>
                         </td>
                         <td>
                             <input

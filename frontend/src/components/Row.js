@@ -1,7 +1,7 @@
 import React from 'react';
-import { MdDeleteForever } from 'react-icons/md';
+import { MdDeleteForever, MdEdit } from 'react-icons/md';
 
-function Row({ exercise, onDelete }) {
+function Row({ exercise, onDelete, onEdit }) {
     return (
         <tr>
             <td>{exercise.name}</td>
@@ -9,8 +9,8 @@ function Row({ exercise, onDelete }) {
             <td>{exercise.weight}</td>
             <td>{exercise.unit}</td>
             <td>{exercise.date}</td>
-            <td><MdDeleteForever onClick={() => onDelete(exercise._id)}/></td>
-            <td>Edit</td>
+            <td><MdDeleteForever onClick={() => onDelete(exercise._id)} /></td>
+            <td><MdEdit onClick={() => onEdit(exercise)} /></td>
         </tr>
     );
 }
