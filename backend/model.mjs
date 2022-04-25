@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 mongoose.connect(
-    "mongodb+srv://hchen:lull1ZE7ERoEPYDr@cs290.jdn0v.mongodb.net/exercises?retryWrites=true&w=majority",
+    "<URI HERE>",
     { useNewUrlParser: true, useUnifiedTopology: true }
 );
 
